@@ -1,0 +1,11 @@
+language: ruby
+
+services:
+  - docker
+
+install:
+  - docker build -t mirth-connect
+  - docker run -d -p 8443:8443 --name mirth-connect mirth-connect
+
+script:
+  - docker ps | grep -q mirth-connect

@@ -1,0 +1,11 @@
+# ignore .git and .cache folders
+.git
+.gitignore
+.cache
+
+# ignore all markdown files (md) and license
+*.md
+LICENSE
+
+# ignore other build files
+.travis.yml
