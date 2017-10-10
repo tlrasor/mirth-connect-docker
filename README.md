@@ -1,5 +1,7 @@
-mirth-connect
+mirth-connect-docker
 ============
+
+[![Build Status](https://travis-ci.org/tlrasor/mirth-connect-docker.svg?branch=master)](https://travis-ci.org/tlrasor/mirth-connect-docker)
 
 # What is Mirth Connect?
 
@@ -13,7 +15,7 @@ mirth-connect
 
 Mirth Connect Server contains the back-end for the management interface and the integration engine component, which performs message filtering, transformation, and transmission.
 
-    $ docker run -d -P tlrasor/mirth-connect
+    $ docker run -d -p 8080:8080 -p 8443:8443 tlrasor/mirth-connect
 
 ## Configuring Mirth Connect Server
 
@@ -29,7 +31,7 @@ Create a configuration file for Mirth Connect Server from the default configurat
 
 Launch the container and mount the configuration file:
 
-    $ docker run -d -P -v ~/mirth.properties:/opt/mirth-connect/conf/mirth.properties tlrasor/mirth-connect
+    $ docker run -d -p 8080:8080 -p 8443:8443 -v ~/mirth.properties:/opt/mirth-connect/conf/mirth.properties tlrasor/mirth-connect
 
 ## Running Mirth Shell
 
